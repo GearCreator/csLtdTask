@@ -1,0 +1,77 @@
+<form class="owner-form" [formGroup]="ownerForm" (ngSubmit)="ownerData()">
+    <h2>Владелец</h2>
+
+    <div class="owner-form-wrapper">
+        <div class="owner-input">
+            <p>Фамилия</p>
+            <div>
+                <input type="text" placeholder="Фамилия" formControlName='secondName'><br>
+                <small *ngIf="f.secondName.status == 'INVALID' && f.secondName.touched" class="warning-text">Введите фамилию</small>
+            </div>
+        </div>
+    
+        <div class="owner-input">
+            <p>Имя</p>
+            <div>
+                <input type="text" placeholder="Имя" formControlName='firstName'><br>
+                <small *ngIf="f.firstName.status == 'INVALID' && f.firstName.touched" class="warning-text">Введите имя</small>
+            </div>
+        </div>
+    
+        <div class="owner-input">
+            <p>Отчество</p>
+            <div>
+                <input type="text" placeholder="Отчество" formControlName='middleName'><br>
+                <small *ngIf="f.middleName.status == 'INVALID' && f.middleName.touched" class="warning-text">Введите отчетство</small>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Автомобили</h2>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Номер</th>
+          <th scope="col">Марка</th>
+          <th scope="col">Модель</th>
+          <th scope="col">Год</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr formArrayName='cars' *ngFor='let car of cars.controls; let i = index'>
+                <td [formGroupName]='i'>
+                    <div class="input-wrapper">
+                        <input type="text" formControlName='number'>
+                        <small *ngIf="cf(i).controls.number.status == 'INVALID' && cf(i).controls.number.touched" class="warning-text">Некорректный номер</small>
+                    </div>
+                </td>
+                <td [formGroupName]='i'>
+                    <div class="input-wrapper">
+                        <input type="text" formControlName='mark'>
+                        <small *ngIf="cf(i).controls.mark.status == 'INVALID' && cf(i).controls.mark.touched" class="warning-text">Введите марку</small>
+                    </div>
+                </td>
+                <td [formGroupName]='i'>
+                    <div class="input-wrapper">
+                        <input type="text" formControlName='model'>
+                        <small *ngIf="cf(i).controls.model.status == 'INVALID' && cf(i).controls.model.touched" class="warning-text">Введите модель</small>
+                    </div>
+                </td>
+                <td [formGroupName]='i'>
+                    <div class="input-wrapper">
+                        <input type="number" min="1995" [max]="getFullYear()" formControlName='releaseYear'>
+                        <small *ngIf="cf(i).controls.releaseYear.status == 'INVALID' && cf(i).controls.releaseYear.touched" class="warning-text">Введите год 1995 - {{ getFullYear() }}</small>
+                    </div>
+                </td>
+                <td><button type="button"  *ngIf="!preview" class="btn btn-sm btn-primary trash-btn" (click)="removeCar(i)"><i class="fas fa-trash-alt"></i></button></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <button type="button" *ngIf="!preview" class="btn btn-sm btn-primary" (click)='addCar()'><i class="fas fa-plus"></i>Добавить автомобиль</button><br>
+
+    <button *ngIf="!preview" class="btn btn-sm btn-primary" [disabled]="ownerForm.invalid">Сохранить</button>
+    <button type="button" class="btn btn-sm btn-primary back-btn" [routerLink]="['']">Назад</button>
+</form>

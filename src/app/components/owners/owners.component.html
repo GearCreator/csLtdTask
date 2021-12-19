@@ -1,0 +1,32 @@
+<div class="owners-wrapper">
+  <h2>Владельцы автомобилей</h2>
+
+  <div class="buttons">
+      <button type="button" class="btn btn-sm btn-primary" routerLink="/new"><i class="fas fa-plus"></i>Добавить</button>
+  </div>
+  
+  <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Фамилия</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Отчество</th>
+        <th scope="col">Количество машин</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let owner of owners; index as i">
+        <td>{{ owner.secondName }}</td>
+        <td>{{ owner.firstName }}</td>
+        <td>{{ owner.middleName }}</td>
+        <td>{{ owner.cars.length }}</td>
+        <td class="method-wrapper">
+          <i class="fas fa-eye" [routerLink]="['', 'preview', owner.id]"></i>
+          <i class="fas fa-edit" [routerLink]="['', 'edit', owner.id]"></i>
+          <i class="fas fa-trash-alt" (click)='removeOwner(owner)'></i>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+</div>

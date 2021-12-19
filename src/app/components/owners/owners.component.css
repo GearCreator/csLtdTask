@@ -1,0 +1,22 @@
+.owners-wrapper {
+    max-width: 1200px;
+    margin: 15px 0 0 15px;
+}
+
+.table {
+    max-width: 1000px;
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+.fas {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.method-wrapper {
+    display: flex;
+    justify-content: left;
+}

@@ -1,0 +1,51 @@
+.owner-form {
+    max-width: 1000px;
+    margin: 15px 0 0 15px;
+}
+
+.owner-input {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    padding: 5px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.warning-text {
+    color: red;
+}
+
+.owner-form-wrapper {
+    margin-bottom: 10px;
+}
+
+.table {
+    max-width: 1000px;
+}
+
+.btn {
+    margin-bottom: 10px;
+    margin-right: 5px;
+}
+
+.trash-btn {
+    
+    margin: 0;
+}
+
+.back-btn {
+    background-color: gray;
+    border-color: gray;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 200px;
+}
