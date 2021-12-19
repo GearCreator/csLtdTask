@@ -49,3 +49,11 @@ p {
 input {
     width: 200px;
 }
+
+.fas, .far {
+    margin-right: 5px;
+}
+
+.fa-trash-alt {
+    margin: 0
+}

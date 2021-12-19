@@ -22,9 +22,9 @@
         <td>{{ owner.middleName }}</td>
         <td>{{ owner.cars.length }}</td>
         <td class="method-wrapper">
-          <i class="fas fa-eye" [routerLink]="['', 'preview', owner.id]"></i>
-          <i class="fas fa-edit" [routerLink]="['', 'edit', owner.id]"></i>
-          <i class="fas fa-trash-alt" (click)='removeOwner(owner)'></i>
+          <i class="fas fa-eye btn btn-sm btn-primary back-btn" [routerLink]="['', 'preview', owner.id]"></i>
+          <i class="fas fa-edit btn btn-sm btn-primary back-btn" [routerLink]="['', 'edit', owner.id]"></i>
+          <i class="fas fa-trash-alt btn btn-sm btn-primary back-btn" (click)='removeOwner(owner)'></i>
         </td>
       </tr>
       </tbody>

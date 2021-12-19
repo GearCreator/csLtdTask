@@ -72,6 +72,6 @@
 
       <button type="button" *ngIf="!preview" class="btn btn-sm btn-primary" (click)='addCar()'><i class="fas fa-plus"></i>Добавить автомобиль</button><br>
 
-    <button *ngIf="!preview" class="btn btn-sm btn-primary" [disabled]="ownerForm.invalid">Сохранить</button>
-    <button type="button" class="btn btn-sm btn-primary back-btn" [routerLink]="['']">Назад</button>
+    <button *ngIf="!preview" class="btn btn-sm btn-primary" [disabled]="ownerForm.invalid"><i class="far fa-save"></i>Сохранить</button>
+    <button type="button" class="btn btn-sm btn-primary back-btn" [routerLink]="['']"><i class="fas fa-arrow-circle-left"></i>Назад</button>
 </form>
